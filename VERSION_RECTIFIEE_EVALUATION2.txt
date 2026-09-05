@@ -1,0 +1,25 @@
+VERSION RECTIFIÉE — ÉVALUATION SCIENTIFIQUE 2
+
+Principales modifications :
+- notebook scientifique complet ajouté dans notebooks/ ;
+- EDA approfondie et contrôle de qualité documentés ;
+- réconciliation des données mise en avant ;
+- clustering corrigé avec log1p + StandardScaler ;
+- diagnostics de k et équilibre des clusters enregistrés ;
+- régression comparée à une baseline ;
+- KFold 5 plis + GroupKFold par période ;
+- résidus ajoutés aux prédictions ;
+- interprétation des métriques et limites dans regression_metrics.json ;
+- analyse de sensibilité du paramètre contamination pour Isolation Forest ;
+- documentation scientifique ajoutée dans docs/ ;
+- artefacts régénérés ;
+- tests : 5 réussis.
+
+Important : la plateforme reste un outil d'analyse exploratoire sur données agrégées,
+et non un système de prédiction spatio-temporelle opérationnel de la criminalité.
+
+AJOUT DEPLOIEMENT STREAMLIT
+- streamlit_app.py : point d'entrée Streamlit Community Cloud
+- docs/INSTALLATION_DEPLOIEMENT_STREAMLIT.md : installation complète jusqu'au déploiement
+- COMMANDES_RAPIDES.txt : commandes prêtes à copier-coller
+- architecture déploiement documentée : Streamlit Community Cloud -> FastAPI Render -> PostgreSQL

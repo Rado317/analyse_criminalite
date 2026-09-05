@@ -1,0 +1,36 @@
+{
+  "nombre_lignes": 152,
+  "nombre_colonnes": 28,
+  "periodes": [
+    "2024",
+    "2025",
+    "2026-S1"
+  ],
+  "nombre_categories": 7,
+  "nombre_infractions_normalisees": 97,
+  "lignes_par_periode": {
+    "2024": 47,
+    "2025": 54,
+    "2026-S1": 51
+  },
+  "lignes_par_categorie": {
+    "I. C/ ÉTAT": 6,
+    "II. CRIMINALITÉ ET ACTES DE BANDITISME": 15,
+    "III. INFRACTIONS COURANTES": 72,
+    "IV. INFRACTIONS ÉCONOMIQUES": 26,
+    "V. LUTTE C/ LES STUPÉFIANTS ET SUBSTANCES PSYCHOTROPES": 8,
+    "VI. ACCIDENTS DE LA CIRCULATION": 16,
+    "VII. AUTRES": 9
+  },
+  "labels_non_renseignes": 1,
+  "doublons_record_id": 0,
+  "valeurs_negatives": 0,
+  "lignes_sans_activite": 1,
+  "ecarts_avec_totaux_officiels": 25,
+  "limites": [
+    "Les données sont agrégées par infraction et par période.",
+    "2026-S1 couvre seulement le premier semestre.",
+    "Aucune date mensuelle, adresse ou coordonnée géographique n'est disponible.",
+    "Les résultats ML sont exploratoires et ne servent pas à une décision individuelle."
+  ]
+}

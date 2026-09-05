@@ -1,0 +1,87 @@
+============================================================
+PLATEFORME CRIMINALITE — COMMANDES RAPIDES
+STREAMLIT + FASTAPI
+============================================================
+
+1) CREER L'ENVIRONNEMENT
+------------------------
+Linux/macOS :
+python3 -m venv .venv
+source .venv/bin/activate
+
+Windows PowerShell :
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+2) INSTALLER
+------------
+python -m pip install --upgrade pip
+pip install -r backend/requirements.txt
+
+3) PREPARER DONNEES + ML + BASE
+-------------------------------
+cd backend
+python -m scripts.prepare_all
+
+4) TESTS
+--------
+cd backend
+pytest -q
+
+5) TERMINAL 1 — FASTAPI
+-----------------------
+cd backend
+uvicorn api.main:app --reload --host 127.0.0.1 --port 8000
+
+Swagger : http://127.0.0.1:8000/docs
+Health  : http://127.0.0.1:8000/health
+
+6) TERMINAL 2 — STREAMLIT
+-------------------------
+streamlit run streamlit_app.py
+
+Interface : http://127.0.0.1:8501
+
+7) GITHUB
+---------
+git init
+git add .
+git commit -m "Version rectifiee evaluation scientifique 2"
+git branch -M main
+git remote add origin https://github.com/VOTRE_UTILISATEUR/VOTRE_DEPOT.git
+git push -u origin main
+
+8) DEPLOIEMENT BACKEND RENDER
+-----------------------------
+Utiliser le fichier : render.yaml (rootDir: backend)
+Récupérer ensuite l'URL publique de FastAPI.
+
+9) DEPLOIEMENT STREAMLIT COMMUNITY CLOUD
+----------------------------------------
+Repository : votre dépôt GitHub
+Branch     : main
+Main file  : streamlit_app.py
+
+Secret :
+API_URL = "https://VOTRE-API-RENDER.onrender.com"
+
+Puis Deploy.
+
+GUIDE COMPLET :
+docs/INSTALLATION_DEPLOIEMENT_STREAMLIT.md
+============================================================
+
+10) DOCKER COMPOSE — STACK COMPLETE
+-----------------------------------
+docker compose up --build
+
+Streamlit : http://127.0.0.1:8501
+FastAPI   : http://127.0.0.1:8000/docs
+
+Arret :
+docker compose down
+
+11) NOTEBOOK SCIENTIFIQUE
+-------------------------
+pip install notebook
+jupyter notebook backend/notebooks/Analyse_scientifique_criminalite_Jupyter.ipynb

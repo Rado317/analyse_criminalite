@@ -1,0 +1,167 @@
+{
+  "cible": "Resultats_DEF",
+  "question_modelisation": "Dans quelle mesure les variables agrégées disponibles permettent-elles d'estimer Resultats_DEF dans cet échantillon ?",
+  "objectif": "Comparer expérimentalement plusieurs modèles pour estimer le nombre de résultats DEF à partir des saisines, victimes, personnes mises en cause, catégorie et période.",
+  "meilleur_modele": "Ridge",
+  "critere_selection": "RMSE moyenne en validation croisée KFold à 5 plis",
+  "nombre_observations": 152,
+  "validations": {
+    "kfold": "KFold 5 plis, mélange déterministe : performance interne sur des observations de structure similaire.",
+    "par_periode": "GroupKFold par période : une période complète est laissée de côté à chaque pli pour tester la robustesse entre périodes."
+  },
+  "interpretation_metriques": {
+    "MAE": "Erreur absolue moyenne, dans l'unité de Resultats_DEF.",
+    "RMSE": "Erreur quadratique moyenne ; pénalise davantage les grosses erreurs.",
+    "R2": "Part de variabilité expliquée ; un R² négatif signifie que le modèle peut être moins performant qu'une prédiction constante sur le pli évalué."
+  },
+  "resultats": [
+    {
+      "modele": "Ridge",
+      "validation_kfold": {
+        "mae": 22.5332,
+        "rmse": 47.5397,
+        "r2": 0.6982,
+        "r2_ecart_type": 0.1732
+      },
+      "validation_par_periode": {
+        "mae": 28.0783,
+        "rmse": 62.072,
+        "r2": 0.5235,
+        "r2_ecart_type": 0.1049
+      },
+      "mae_cv": 22.5332,
+      "rmse_cv": 47.5397,
+      "r2_cv": 0.6982,
+      "r2_cv_ecart_type": 0.1732,
+      "mae_entrainement": 17.0906,
+      "rmse_entrainement": 29.5585,
+      "r2_entrainement": 0.9097
+    },
+    {
+      "modele": "Random Forest",
+      "validation_kfold": {
+        "mae": 20.3703,
+        "rmse": 56.4593,
+        "r2": 0.7248,
+        "r2_ecart_type": 0.1449
+      },
+      "validation_par_periode": {
+        "mae": 22.0186,
+        "rmse": 56.4561,
+        "r2": 0.6754,
+        "r2_ecart_type": 0.0963
+      },
+      "mae_cv": 20.3703,
+      "rmse_cv": 56.4593,
+      "r2_cv": 0.7248,
+      "r2_cv_ecart_type": 0.1449,
+      "mae_entrainement": 9.8252,
+      "rmse_entrainement": 30.9404,
+      "r2_entrainement": 0.901
+    },
+    {
+      "modele": "Gradient Boosting",
+      "validation_kfold": {
+        "mae": 21.6289,
+        "rmse": 60.618,
+        "r2": 0.6602,
+        "r2_ecart_type": 0.2299
+      },
+      "validation_par_periode": {
+        "mae": 24.5613,
+        "rmse": 63.0128,
+        "r2": 0.552,
+        "r2_ecart_type": 0.121
+      },
+      "mae_cv": 21.6289,
+      "rmse_cv": 60.618,
+      "r2_cv": 0.6602,
+      "r2_cv_ecart_type": 0.2299,
+      "mae_entrainement": 3.6574,
+      "rmse_entrainement": 10.8885,
+      "r2_entrainement": 0.9877
+    },
+    {
+      "modele": "Référence médiane",
+      "validation_kfold": {
+        "mae": 43.7471,
+        "rmse": 106.3311,
+        "r2": -0.183,
+        "r2_ecart_type": 0.0144
+      },
+      "validation_par_periode": {
+        "mae": 42.9287,
+        "rmse": 104.5557,
+        "r2": -0.1802,
+        "r2_ecart_type": 0.0336
+      },
+      "mae_cv": 43.7471,
+      "rmse_cv": 106.3311,
+      "r2_cv": -0.183,
+      "r2_cv_ecart_type": 0.0144,
+      "mae_entrainement": 43.6776,
+      "rmse_entrainement": 106.0275,
+      "r2_entrainement": -0.1622
+    }
+  ],
+  "importance_variables_exploratoire": [
+    {
+      "variable": "MiseEnCause_Interpelles",
+      "importance": 25.8491
+    },
+    {
+      "variable": "Saisine_ST",
+      "importance": 9.3895
+    },
+    {
+      "variable": "Victimes_F_fille",
+      "importance": 5.0756
+    },
+    {
+      "variable": "Saisine_FD",
+      "importance": 2.0595
+    },
+    {
+      "variable": "Annee",
+      "importance": 2.0183
+    },
+    {
+      "variable": "Saisine_Autres",
+      "importance": 1.3984
+    },
+    {
+      "variable": "Victimes_F",
+      "importance": 1.3131
+    },
+    {
+      "variable": "Victimes_H",
+      "importance": 1.2838
+    },
+    {
+      "variable": "Saisine_Plaintes_directes",
+      "importance": 1.2804
+    },
+    {
+      "variable": "Categorie",
+      "importance": 1.1629
+    },
+    {
+      "variable": "MiseEnCause_Neutralises",
+      "importance": 0.7127
+    },
+    {
+      "variable": "Victimes_G",
+      "importance": -0.0237
+    }
+  ],
+  "avertissement_importance": "L'importance par permutation mesure une contribution prédictive dans cet échantillon ; elle ne démontre pas une relation causale.",
+  "limites": [
+    "Seulement 152 observations agrégées.",
+    "Deux années complètes et un premier semestre seulement.",
+    "Absence de granularité mensuelle ou journalière.",
+    "Absence de géolocalisation fine.",
+    "La validation par période peut révéler une performance inférieure à la validation KFold.",
+    "Le modèle est une preuve de concept et non un système de prédiction criminelle opérationnel."
+  ],
+  "avertissement": "Prototype académique sur trois périodes agrégées. Le modèle ne prédit ni une personne, ni un quartier, ni un événement futur précis."
+}

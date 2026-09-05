@@ -1,0 +1,25 @@
+name: Tests Python
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Installer les dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+      - name: Préparer les données et modèles
+        run: cd backend && python -m scripts.prepare_all
+      - name: Vérifier la syntaxe
+        run: python -m compileall backend/api frontend backend/src backend/scripts
+      - name: Lancer les tests
+        run: cd backend && pytest -q

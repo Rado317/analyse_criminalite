@@ -1,0 +1,24 @@
+PROJET DE MEMOIRE — VERSION FINALE
+Plateforme d'analyse de la criminalité urbaine
+
+Contenu :
+- Front-end Streamlit complet
+- Back-end FastAPI complet
+- SQLite local + PostgreSQL production
+- Nettoyage et EDA
+- K-Means + PCA
+- Isolation Forest
+- Régression : baseline, Ridge, Random Forest, Gradient Boosting
+- KFold + GroupKFold
+- MAE / RMSE / R²
+- Notebook scientifique complet
+- 5 tests Pytest
+- Docker / Docker Compose
+- Render Blueprint
+- Guide Streamlit Community Cloud
+- Scripts Windows / Linux / macOS
+- Images d'interface pour mémoire/soutenance
+
+Point d'entrée Streamlit : streamlit_app.py
+Point d'entrée FastAPI : api/main.py
+Guide principal : docs/INSTALLATION_DEPLOIEMENT_STREAMLIT.md

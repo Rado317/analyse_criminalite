@@ -1,0 +1,68 @@
+{
+  "algorithme": "Isolation Forest + règles robustes",
+  "contamination": 0.08,
+  "nombre_observations": 152,
+  "nombre_anomalies_ml": 13,
+  "nombre_anomalies_regles": 13,
+  "nombre_anomalies_finales": 16,
+  "repartition_severite": {
+    "Faible": 7,
+    "Élevée": 5,
+    "Moyenne": 4
+  },
+  "variables": [
+    "Saisine_Plaintes_directes",
+    "Saisine_FD",
+    "Saisine_ST",
+    "Saisine_Autres",
+    "Total_victimes",
+    "MiseEnCause_Neutralises",
+    "MiseEnCause_Interpelles",
+    "Resultats_En_cours",
+    "Resultats_Retraits",
+    "Resultats_DAT",
+    "Resultats_DEF"
+  ],
+  "sensibilite_contamination": [
+    {
+      "contamination": 0.03,
+      "nombre_anomalies_ml": 5,
+      "pourcentage": 3.29
+    },
+    {
+      "contamination": 0.05,
+      "nombre_anomalies_ml": 8,
+      "pourcentage": 5.26
+    },
+    {
+      "contamination": 0.08,
+      "nombre_anomalies_ml": 13,
+      "pourcentage": 8.55
+    },
+    {
+      "contamination": 0.1,
+      "nombre_anomalies_ml": 16,
+      "pourcentage": 10.53
+    },
+    {
+      "contamination": 0.15,
+      "nombre_anomalies_ml": 23,
+      "pourcentage": 15.13
+    }
+  ],
+  "justification_contamination": "La valeur 0,08 est un réglage exploratoire. Le tableau de sensibilité montre comment le nombre de cas signalés varie lorsque ce paramètre change.",
+  "seuils_regles": {
+    "Saisine_Plaintes_directes": 3976.56,
+    "Saisine_FD": 363.5,
+    "Saisine_ST": 206.11,
+    "Saisine_Autres": 96.62,
+    "Total_victimes": 3625.48,
+    "MiseEnCause_Neutralises": 17.98,
+    "MiseEnCause_Interpelles": 1197.81,
+    "Resultats_En_cours": 626.39,
+    "Resultats_Retraits": 820.59,
+    "Resultats_DAT": 421.5,
+    "Resultats_DEF": 389.7
+  },
+  "avertissement": "Une anomalie statistique n'est pas automatiquement une erreur. Elle doit être vérifiée dans les documents sources."
+}
