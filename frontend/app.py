@@ -20,11 +20,11 @@ def resolve_api_url() -> str:
 API_URL = resolve_api_url()
 
 st.set_page_config(
-    page_title="Analyse intelligente des infractions",
+    page_title="Analyse intelligente des criminalités urbaine à Madagascar",
     page_icon="📊",
     layout="wide",
 )
-st.title("Plateforme intelligente d’analyse des infractions")
+st.title("Plateforme intelligente d'analyse des criminalités urbaine à Madagascar")
 st.caption(
     "Analyse statistique • clustering • détection d’anomalies • estimation ML — 2024 à 2026-S1"
 )
