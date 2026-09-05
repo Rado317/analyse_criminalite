@@ -12,9 +12,9 @@ def resolve_api_url() -> str:
     if env_value:
         return env_value.rstrip("/")
     try:
-        return str(st.secrets.get("API_URL", "http://localhost:8000")).rstrip("/")
+        return str(st.secrets.get("API_URL", "https://analyse-criminalite.onrender.com")).rstrip("/")
     except Exception:
-        return "http://localhost:8000"
+        return "https://analyse-criminalite.onrender.com"
 
 
 API_URL = resolve_api_url()
