@@ -251,21 +251,3 @@ with ml_tab:
         else:
             st.error(response.text)
 
-with about_tab:
-    st.markdown(
-        """
-        ### Objet du projet
-        La plateforme centralise les données d'infractions, vérifie leur qualité,
-        produit des statistiques, regroupe les profils similaires et détecte des
-        observations inhabituelles.
-
-        ### Ce que la plateforme ne fait pas
-        Elle ne cartographie pas les infractions, car les fichiers ne contiennent
-        ni adresse, ni quartier, ni latitude/longitude. Elle ne prédit pas non plus
-        la dangerosité d'une personne.
-
-        ### Limite principale
-        Les données couvrent deux années complètes et un semestre. Les résultats
-        Machine Learning constituent donc une preuve de concept académique.
-        """
-    )
